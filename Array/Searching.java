@@ -14,7 +14,7 @@ public class Searching {
 
         for (int i = 0; i < arr.length; i++) {
             if (a[i]==search) {
-                System.out.println("value found at ":i);
+                System.out.println("value found at "+i);
             }
         }
     }
