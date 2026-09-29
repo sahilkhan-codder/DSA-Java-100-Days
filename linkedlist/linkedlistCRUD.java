@@ -12,9 +12,10 @@ public class linkedlistCRUD {
         
     }
     public static void displayr(Node head){
-       if (head==null) {
-        return;
-       } else {
+        int count=0;
+       if (head==null) return;
+        else {
+            count++;
         System.out.print(head.data+" ");
         displayr(head.next);
        }
@@ -44,5 +45,6 @@ public class linkedlistCRUD {
 
         // display using recursion
         displayr(a);
+        
     }
 }
