@@ -53,6 +53,15 @@ public class learnt {
                 head=temp;
             }
         }
+        void insertat(int idx, int val){
+            Node temp=head;
+            Node tt=new Node(val);
+            for (int i = 0; i < idx-1; i++) {
+                temp=temp.next;   
+            }
+            tt.next=temp.next;
+            temp.next=tt;
+        }
     }
 
     public static void main(String[] args) {
@@ -66,6 +75,10 @@ public class learnt {
 
         list.insertatbegin(99);
         System.out.println("the lenght of the linkedlist is "+list.size());
+        list.display();
+
+        System.out.println();
+        list.insertat(3,69);
         list.display();
     }
 }
