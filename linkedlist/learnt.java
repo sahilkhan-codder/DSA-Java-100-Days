@@ -56,11 +56,42 @@ public class learnt {
         void insertat(int idx, int val){
             Node temp=head;
             Node tt=new Node(val);
+            if(idx == size()){
+                insertatend(val);
+                return ;
+            }
+            if (idx==0) {
+                insertatbegin(val);
+                return ;
+            }
             for (int i = 0; i < idx-1; i++) {
                 temp=temp.next;   
             }
             tt.next=temp.next;
             temp.next=tt;
+        }
+
+        int getat(int idx){
+            Node temp=head;
+            for (int i = 0; i < idx; i++) {
+                temp=temp.next;
+            }
+            return temp.data;
+        }
+        void deleteat(int idx){
+            Node temp=head;
+            for (int i = 0; i < idx-1; i++) {
+                temp=temp.next;
+            }
+            temp.next=temp.next.next;
+            if (idx==size()-1) {
+                tail=temp;
+                return ;
+            }
+            if(idx==0){
+                head=head.next;
+                return ;
+            }
         }
     }
 
@@ -80,5 +111,9 @@ public class learnt {
         System.out.println();
         list.insertat(3,69);
         list.display();
+        System.out.println("the element at 2 is " + list.getat(5));
+        list.deleteat(5);
+        list.display();
+         System.out.println("the lenght of the linkedlist is "+list.size());
     }
 }
