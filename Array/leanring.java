@@ -16,9 +16,32 @@ public class leanring {
         }
         System.out.println("the total values are "+ ans);
     }
-    public static void main(String[] args) {
-        int [] arr ={10,2,50,6,69,4,5,3,1,20,30,40};
-        int target =60;
-        threesum(arr, target);
+    public static int[] rotate(int[] arr, int k){
+        int n=arr.length;
+         k=k%n;
+         int [] ans=new int[n];
+        int j=0;
+         for (int i = n-k; i <n; i++) {
+            ans[j++]=arr[i];
+         }
+         for (int i = 0; i < n-k; i++) {
+            ans[j++]=arr[i];
+         }
+         return ans;
     }
+    static void printarr(int[] arr){
+        System.out.print("array is ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+",");
+        }
+    }
+    public static void main(String[] args) {
+        int [] arr ={1,2,3,4,5,6,10,20,30,40,69};
+        int target =60;
+        int rotate=2;
+        threesum(arr, target);
+         arr=rotate(arr, rotate);
+         System.out.println("rotated array is : ");
+         printarr(arr);
+        }
 }
