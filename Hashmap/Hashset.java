@@ -2,7 +2,7 @@ package Hashmap;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Basic {
+public class Hashset {
     public static void main(String[] args) {
         HashSet <Integer> set =new HashSet<>();
         set.add(10);
